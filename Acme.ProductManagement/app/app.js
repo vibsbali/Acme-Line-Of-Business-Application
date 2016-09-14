@@ -2,6 +2,7 @@
 (function () {
     var app = angular.module("productManagement",
         ["common.services",
+            "ngMessages",
             "ui.router",
             "ui.mask",
             "ui.bootstrap",
