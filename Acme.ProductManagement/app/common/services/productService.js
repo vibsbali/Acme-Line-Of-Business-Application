@@ -20,7 +20,7 @@
             return margin;
         }
         
-        function calculatePriceFromPercent(cost, percent) {
+        function calculatePriceFromMarkupPercent(cost, percent) {
             var price = cost;
             if (cost && percent) {
                 price = cost + (cost * percent / 100);
@@ -28,7 +28,7 @@
             }
             return price;
         }
-        function calculatePriceFromAmount(cost, amount) {
+        function calculatePriceFromMarkupAmount(cost, amount) {
             var price = cost;
             if (cost && amount) {
                 price = cost + amount;
@@ -40,8 +40,8 @@
         return {
             calculateMarginPercent: calculateMarginPercent,
             calculateMarginAmount: calculateMarginAmount,
-            calculatePriceFromPercent: calculatePriceFromPercent,
-            calculatePriceFromAmount: calculatePriceFromAmount
+            calculatePriceFromMarkupPercent: calculatePriceFromMarkupPercent,
+            calculatePriceFromMarkupAmount: calculatePriceFromMarkupAmount
         };
     });
 }())

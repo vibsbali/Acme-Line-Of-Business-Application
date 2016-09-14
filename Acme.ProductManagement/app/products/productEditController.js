@@ -3,10 +3,31 @@
 
     angular.module("productManagement")
         //product will be injected using resolve
-        .controller("ProductEditController", ["product","$state", function (product, $state) {
+        .controller("ProductEditController", ["product", "$state", "productService", function (product, $state, productService) {
             var vm = this;
 
             vm.product = product;
+            vm.priceOption = "percent";
+
+            vm.marginPercent = function () {
+                return productService.calculateMarginPercent(vm.product.price, vm.product.cost);
+            };
+
+            /* Calculate the price based on a markup */
+            vm.calculatePrice = function () {
+                var price = 0;
+
+                if (vm.priceOption == 'amount') {
+                    price = productService.calculatePriceFromMarkupAmount(
+                        vm.product.cost, vm.markupAmount);
+                }
+
+                if (vm.priceOption == 'percent') {
+                    price = productService.calculatePriceFromMarkupPercent(
+                        vm.product.cost, vm.markupPercent);
+                }
+                vm.product.price = price;
+            };
 
             if (vm.product && vm.product.productId) {
                 vm.title = "Edit: " + vm.product.productName;
@@ -27,16 +48,16 @@
             };
 
             //note how we call $save on the product itself
-            vm.submit = function() {
-                vm.product.$save(function(data) {
+            vm.submit = function () {
+                vm.product.$save(function (data) {
                     toastr.success("Saved");
-                }, function(error) {
+                }, function (error) {
                     toastr.error("oops.. " + error.statusText);
                 });
             }
 
             //we use $stateProvider to go to a different view programatically
-            vm.cancel = function() {
+            vm.cancel = function () {
                 $state.go("productList");
             }
         }]);
