@@ -27,6 +27,7 @@
                         productResource: "productResource",
                         product: function (productResource, $stateParams) {
                             var productId = $stateParams.productId;
+                            //Notice the $promise at the end without it the product passed will not be resolved!
                             return productResource.get({ productId: productId }).$promise;
                         }
                     }
