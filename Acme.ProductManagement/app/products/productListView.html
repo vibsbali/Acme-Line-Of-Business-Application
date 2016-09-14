@@ -17,7 +17,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="product in vm.products">
-                    <td><img ng-if="vm.showImage" style="width: 50px; margin: 2px;" ng-src="{{product.imageUrl}}" title="{{product.productName}}" /></td>
+                    <td><img class="center-block img-responsive" ng-if="vm.showImage" style="width: 50px; margin: 2px;" ng-src="{{product.imageUrl}}" title="{{product.productName}}" /></td>
                     <td>{{product.productName}}</td>
                     <td>{{product.productCode}}</td>
                     <td>{{product.releaseDate}}</td>
