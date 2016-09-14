@@ -21,7 +21,15 @@
                     //remember to add / after detail otherwise the forward slash will not appear in the browser address bar
                     url: "/products/detail/:productId",
                     "templateUrl": "app/products/productDetailView.html",
-                    controller: "ProductDetailController as vm"
+                    controller: "ProductDetailController as vm",
+
+                    resolve: {
+                        productResource: "productResource",
+                        product: function (productResource, $stateParams) {
+                            var productId = $stateParams.productId;
+                            return productResource.get({ productId: productId }).$promise;
+                        }
+                    }
                 })
                 .state("productEdit", {
                     url: "/products/edit/:productId",
