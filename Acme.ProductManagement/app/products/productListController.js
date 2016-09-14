@@ -30,10 +30,8 @@
            //    'imageUrl': 'http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png'
             //}];
 
-            console.log(productResource);
-
             //call productList controller and get the data
-            productResource.getProducts()(function (data) {
+            productResource.query(function (data) {
                 console.log(data);
                 vm.products = data;
             }, function(error) {
