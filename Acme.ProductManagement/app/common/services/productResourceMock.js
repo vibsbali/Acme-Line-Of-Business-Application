@@ -74,5 +74,48 @@
         //the following method states that when there is a get call for "/api/products respond with products json array
         $httpBackend.whenGET(productUrl).respond(products);
 
+        //adding regular expression to handle productIds
+        var editRegex = new RegExp(productUrl + "/[0-9][0-9]*", "");
+       
+        $httpBackend.whenGET(editRegex).respond(function (method, url, data) {
+            var product = { "productId": 0 };
+            var parameters = url.split('/');
+            var length = parameters.length;
+            var id = parameters[length - 1];
+
+            if (id > 0) {
+                for (var i = 0; i < products.length; i++) {
+                    if (products[i].productId == id) {
+                        product = products[i];
+                        break;
+                    }
+                };
+            }
+            return [200, product, {}];
+        });
+
+
+        $httpBackend.whenPOST(productUrl).respond(function (method, url, data) {
+            var product = angular.fromJson(data);
+
+            if (!product.productId) {
+                // new product Id
+                product.productId = products[products.length - 1].productId + 1;
+                products.push(product);
+            }
+            else {
+                // Updated product
+                for (var i = 0; i < products.length; i++) {
+                    if (products[i].productId == product.productId) {
+                        products[i] = product;
+                        break;
+                    }
+                };
+            }
+            return [200, product, {}];
+        });
+
+        // Pass through any requests for application files
+        $httpBackend.whenGET(/app/).passThrough();
     });
 }())
