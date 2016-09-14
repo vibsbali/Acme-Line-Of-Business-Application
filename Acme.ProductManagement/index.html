@@ -7,50 +7,19 @@
     <link href="Content/bootstrap.css" rel="stylesheet"/>
     <link href="Content/app.css" rel="stylesheet" />
 </head>
-<body ng-app="productManagement" ng-controller="ProductListController as vm">
-    <div class="panel panel-primary">
-        <div class="panel-heading" style="font-size:large">
-            Product List
-        </div>
+<body ng-app="productManagement">
 
-        <div class="panel-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <td class="btn btn-primary" ng-click="vm.toggleImage()">{{vm.showImage ? "Hide Image" : "Show Image"}}</td>
-                        <td>Product</td>
-                        <td>Code</td>
-                        <td>Available</td>
-                        <td>Price</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="product in vm.products">
-                        <td><img ng-if="vm.showImage" style="width: 50px; margin: 2px;" ng-src="{{product.imageUrl}}" title="{{product.productName}}" /></td>
-                        <td>{{product.productName}}</td>
-                        <td>{{product.productCode}}</td>
-                        <td>{{product.releaseDate}}</td>
-                        <td>{{product.price | currency}}</td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
-    </div>
-
-
-
-    <!--Library-->
-    <script src="Scripts/angular.js"></script>
-    <script src="Scripts/angular-resource.js"></script>
-    <script src="Scripts/angular-mocks.js"></script>
-    <script src="app/app.js"></script>
-    <!--Services-->
-    <script src="app/common/services/common.services.js"></script>
+<!--Library-->
+<script src="Scripts/angular.js"></script>
+<script src="Scripts/angular-resource.js"></script>
+<script src="Scripts/angular-mocks.js"></script>
+<script src="app/app.js"></script>
+<!--Services-->
+<script src="app/common/services/common.services.js"></script>
 <script src="app/common/services/productResource.js"></script>
-    <script src="app/common/services/productResourceMock.js"></script>
-    <!--Controllers-->
-    <script src="app/products/productListController.js"></script>
+<script src="app/common/services/productResourceMock.js"></script>
+<!--Controllers-->
+<script src="app/products/productListController.js"></script>
 
 </body>
 </html>

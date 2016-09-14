@@ -1,0 +1,30 @@
+﻿<!-- The controller will be managed by the routing -->
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size: large">
+        Product List
+    </div>
+
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td class="btn btn-primary" ng-click="vm.toggleImage()">{{vm.showImage ? "Hide Image" : "Show Image"}}</td>
+                    <td>Product</td>
+                    <td>Code</td>
+                    <td>Available</td>
+                    <td>Price</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in vm.products">
+                    <td><img ng-if="vm.showImage" style="width: 50px; margin: 2px;" ng-src="{{product.imageUrl}}" title="{{product.productName}}" /></td>
+                    <td>{{product.productName}}</td>
+                    <td>{{product.productCode}}</td>
+                    <td>{{product.releaseDate}}</td>
+                    <td>{{product.price | currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
