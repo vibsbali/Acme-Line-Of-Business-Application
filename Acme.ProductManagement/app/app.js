@@ -62,7 +62,8 @@
                 })
                 .state("productEdit.tags", {
                     url: "/tags",
-                    templateUrl: "app/products/productEditTagsView.html"
+                    templateUrl: "app/products/productEditTagsView.html",
+                    controller: "ProductEditTagController as pEditTagVm"
                 });
         }
     ]);
