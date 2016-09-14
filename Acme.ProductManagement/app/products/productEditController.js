@@ -3,7 +3,7 @@
 
     angular.module("productManagement")
         //product will be injected using resolve
-        .controller("ProductEditController", ["product", function (product) {
+        .controller("ProductEditController", ["product","$state", function (product, $state) {
             var vm = this;
 
             vm.product = product;
@@ -25,5 +25,15 @@
                 vm.opened = !vm.opened;
                 console.log(vm.opened);
             };
+
+            //note how we call $save on the product itself
+            vm.submit = function() {
+                vm.product.$save();
+            }
+
+            //we use $stateProvider to go to a different view programatically
+            vm.cancel = function() {
+                $state.go("productList");
+            }
         }]);
 }());
