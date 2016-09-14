@@ -17,6 +17,11 @@
                     "templateUrl": "app/products/productListView.html",
                     controller: "ProductListController as vm"
                 })
+                .state("productDetail", {
+                    url: "/products/detail:productId",
+                    "templateUrl": "app/products/productDetailView.html",
+                    controller: "ProductDetailController as vm"
+                })
                 .state("productEdit", {
                     url: "/products/edit:productId",
                     "templateUrl": "app/products/productEditView.html",
