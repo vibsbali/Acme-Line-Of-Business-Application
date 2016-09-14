@@ -4,7 +4,8 @@
     <title></title>
     <meta charset="utf-8" />
 
-    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet"/>
+    <link href="Content/app.css" rel="stylesheet" />
 </head>
 <body ng-app="productManagement" ng-controller="ProductListController as vm">
     <div class="panel panel-primary">
@@ -16,7 +17,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <td class="btn btn-default" ng-click="vm.toggleImage()">{{vm.showImage ? "Hide Image" : "Show Image"}}</td>
+                        <td class="btn btn-primary" ng-click="vm.toggleImage()">{{vm.showImage ? "Hide Image" : "Show Image"}}</td>
                         <td>Product</td>
                         <td>Code</td>
                         <td>Available</td>
