@@ -1,4 +1,4 @@
 ﻿"use strict";
 (function() {
-    angular.module("productManagement", []);
+    angular.module("productManagement", ["common.services"]);
 }());
