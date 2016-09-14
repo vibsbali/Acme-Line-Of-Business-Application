@@ -4,22 +4,26 @@
     <title></title>
     <meta charset="utf-8" />
 
-    <link href="Content/bootstrap.css" rel="stylesheet"/>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/app.css" rel="stylesheet" />
 </head>
 <body ng-app="productManagement">
-
-<!--Library-->
-<script src="Scripts/angular.js"></script>
-<script src="Scripts/angular-resource.js"></script>
-<script src="Scripts/angular-mocks.js"></script>
-<script src="app/app.js"></script>
-<!--Services-->
-<script src="app/common/services/common.services.js"></script>
-<script src="app/common/services/productResource.js"></script>
-<script src="app/common/services/productResourceMock.js"></script>
-<!--Controllers-->
-<script src="app/products/productListController.js"></script>
+    <div class="container">
+        <!--this is where ui will be injected by the router-->
+        <div ui-view></div>
+    </div>
+    <!--Library-->
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-mocks.js"></script>
+    <script src="Scripts/AngularUI/ui-router.js"></script>
+    <script src="app/app.js"></script>
+    <!--Services-->
+    <script src="app/common/services/common.services.js"></script>
+    <script src="app/common/services/productResource.js"></script>
+    <script src="app/common/services/productResourceMock.js"></script>
+    <!--Controllers-->
+    <script src="app/products/productListController.js"></script>
 
 </body>
 </html>

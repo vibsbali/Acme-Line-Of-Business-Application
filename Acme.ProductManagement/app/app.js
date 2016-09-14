@@ -1,4 +1,4 @@
 ﻿"use strict";
 (function () {
-    angular.module("productManagement", ["common.services", "productResourceMock"]);
+    angular.module("productManagement", ["common.services", "productResourceMock", "ui.router"]);
 }());
