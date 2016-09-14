@@ -1,17 +1,21 @@
 ﻿"use strict";
 
-(function() {
+(function () {
     angular.module("common.services")
-        .factory("productResource", ["$resource",
-            function($resource) {
+        .factory("productResource", function ($resource) {
 
-                function productResource() {
-                    return $resource("/api/products/:productId");
-                };
+            //we initialize $resource service with an appropriate backend;
+            var backend = $resource("/api/products/:productId");
 
-                return {
-                    productResource: productResource
-                };
+            //create a factory object
+            var factory = {};
+
+            //add a method getProducts
+            factory.getProducts = function () {
+                //Notice query requires $resource to be initialized with an endpoint
+                return backend.query();
             }
-        ]);
-}())
+
+            return factory;
+        });
+}());
