@@ -28,7 +28,11 @@
 
             //note how we call $save on the product itself
             vm.submit = function() {
-                vm.product.$save();
+                vm.product.$save(function(data) {
+                    toastr.success("Saved");
+                }, function(error) {
+                    toastr.error("oops.. " + error.statusText);
+                });
             }
 
             //we use $stateProvider to go to a different view programatically
