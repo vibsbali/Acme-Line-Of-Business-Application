@@ -1,6 +1,3 @@
-/**
- * Created by Deb on 8/26/2014.
- */
 (function () {
     "use strict";
 
@@ -17,5 +14,16 @@
             else {
                 vm.title = "New Product";
             }
+
+            //$event is the original event object
+            //We first stop any default event to happen by stating $event.preventDefault()
+            vm.open = function ($event) {
+                console.log($event);
+                $event.preventDefault();
+                $event.stopPropagation();
+
+                vm.opened = !vm.opened;
+                console.log(vm.opened);
+            };
         }]);
 }());

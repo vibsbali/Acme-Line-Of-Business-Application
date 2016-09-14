@@ -510,7 +510,6 @@ angular.module('ui.mask', [])
                   }
 
                   function initPlaceholder(placeholderAttr) {
-                      console.log(placeholderAttr);
                       if (!angular.isDefined(placeholderAttr)) {
                           return;
                       }

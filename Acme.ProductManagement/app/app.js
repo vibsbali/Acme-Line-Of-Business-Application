@@ -1,6 +1,11 @@
 ﻿"use strict";
 (function () {
-    var app = angular.module("productManagement", ["common.services", "productResourceMock", "ui.router", "ui.mask"]);
+    var app = angular.module("productManagement",
+        ["common.services",
+            "ui.router",
+            "ui.mask",
+            "ui.bootstrap",
+            "productResourceMock"]);
 
     app.config([
         "$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
