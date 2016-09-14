@@ -17,5 +17,9 @@
                     alert("Please enter one or more tags separated by commas");
                 }
             }
+
+            vm.removeTag = function(idx) {
+                vm.product.tags.splice(idx, 1);
+            };
         }]);
 }());

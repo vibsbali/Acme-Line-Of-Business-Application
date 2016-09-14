@@ -18,10 +18,10 @@
             </div>
         </div>
         <div class="row col-sm-8 col-sm-offset-2">
-            <span ng-repeat="tag in vm.product.tags | orderBy">
+            <span ng-repeat="tag in pEditTagVm.product.tags | orderBy">
                 <button class="btn btn-default"
                         style="font-size:smaller;margin-bottom:12px"
-                        ng-click="vm.removeTag($index)">
+                        ng-click="pEditTagVm.removeTag($index)">
                     {{tag}}
                     <span class="glyphicon glyphicon-remove"></span>
                 </button>
