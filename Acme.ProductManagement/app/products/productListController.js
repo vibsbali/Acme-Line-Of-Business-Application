@@ -32,11 +32,12 @@
 
             console.log(productResource);
 
-            productResource.getProducts(function(data) {
+            //call productList controller and get the data
+            productResource.getProducts()(function (data) {
+                console.log(data);
                 vm.products = data;
-            }, function (error) {
-                console.log(error);
-                vm.errorMessage = error;
+            }, function(error) {
+                alert(error.statusText.concat("  ").concat(error.status));
             });
 
             vm.showImage = false;

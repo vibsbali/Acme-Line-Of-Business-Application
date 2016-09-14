@@ -11,10 +11,11 @@
             var factory = {};
 
             //add a method getProducts
-            factory.getProducts = function () {
+            factory.getProducts = function() {
                 //Notice query requires $resource to be initialized with an endpoint
-                return backend.query();
-            }
+                //Also notice that we are returning query object and controller will be calling it
+                return backend.query;
+            };
 
             return factory;
         });
