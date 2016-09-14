@@ -33,6 +33,7 @@
                     }
                 })
                 .state("productEdit", {
+                    abstract: true,
                     url: "/products/edit/:productId",
                     "templateUrl": "app/products/productEditView.html",
                     controller: "ProductEditController as vm",
