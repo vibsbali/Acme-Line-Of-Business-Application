@@ -1,17 +1,43 @@
 ﻿body {
     background-color: #C6D9F1;
 }
+form {
+    background-color: #A4C8E8;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 1px #ccc;
+    -ms-box-shadow: 0 1px 1px #ccc;
+    box-shadow: 0 1px 1px #ccc;
+    color: #404040;
+    font-size: 16px;
+    padding: 30px 20px;
+}
+
+form legend {
+    color: #404040;
+    font-size: 42px;
+    font-family: 'Cookie', cursive;
+    font-weight: normal;
+    line-height: 1;
+    -ms-text-shadow: 0 3px 0 rgba(0,0,0,0.1);
+    text-shadow: 0 3px 0 rgba(0,0,0,0.1);
+}
 
 .wizard a {
     background: #efefef;
     display: inline-block;
     margin-right: 5px;
+    -moz-min-width: 150px;
+    -ms-min-width: 150px;
+    -o-min-width: 150px;
+    -webkit-min-width: 150px;
     min-width: 150px;
     outline: none;
     padding: 10px 40px 10px;
     position: relative;
     text-decoration: none;
 }
+
 .wizard .active {
     background: #007ACC;
     color: #fff;
