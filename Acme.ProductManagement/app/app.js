@@ -6,6 +6,7 @@
             "ui.router",
             "ui.mask",
             "ui.bootstrap",
+            "angularCharts",
             "productResourceMock"]);
 
     app.config([
