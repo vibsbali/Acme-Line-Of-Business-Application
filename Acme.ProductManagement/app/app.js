@@ -39,6 +39,19 @@
                         }
                     }
                 })
+                .state("priceAnalytics", {
+                    //remember to add / after detail otherwise the forward slash will not appear in the browser address bar
+                    url: "/priceAnalytics",
+                    "templateUrl": "app/prices/pricesAnalyticsView.html",
+                    controller: "PriceAnalyticsController",
+
+                    resolve: {
+                        productResource: "productResource",
+                        products: function(productResource) {
+                            return productResource.query().$promise;
+                        }
+                    }
+                })
                 .state("productEdit", {
                     abstract: true,
                     url: "/products/edit/:productId",
